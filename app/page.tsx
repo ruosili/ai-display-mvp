@@ -46,7 +46,7 @@ export default function Home() {
 
       <div className="grid gap-3 sm:grid-cols-2">
         <input className="border rounded p-2 sm:col-span-2" value={q} onChange={e=>setQ(e.target.value)} placeholder="Enter a query…" />
-        <select className="border rounded p-2" value={placement} onChange={e=>setPlacement(e.target.value)}>
+        <select className="border rounded p-2" value={placement} onChange={e=>setPlacement(e.target.value as typeof placement)}>
           {placements.map(p => <option key={p} value={p}>{p}</option>)}
         </select>
         <select className="border rounded p-2" value={country} onChange={e=>setCountry(e.target.value)}>
