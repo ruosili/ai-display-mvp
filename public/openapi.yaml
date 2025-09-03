@@ -3,10 +3,11 @@ info:
   title: AI Display Fake Ads API
   version: "1.0.0"
 servers:
-  - url: https://YOUR-VERCEL-DOMAIN.vercel.app
+  - url: https://ai-display-mvp.vercel.app
 paths:
   /api/ad:
     get:
+      operationId: getAd
       summary: Get a sponsored unit for a query (fake data)
       parameters:
         - in: query
@@ -50,3 +51,23 @@ paths:
                       safety_tags:
                         type: array
                         items: { type: string }
+  /api/c:
+    get:
+      operationId: trackClick
+      summary: Track ad click and redirect to destination
+      parameters:
+        - in: query
+          name: dest
+          required: true
+          schema: { type: string, format: uri }
+          description: Destination URL to redirect to
+        - in: query
+          name: cid
+          required: false
+          schema: { type: string, default: "test" }
+          description: Click ID for tracking
+      responses:
+        "302":
+          description: Redirect to destination URL
+        "400":
+          description: Bad request - invalid destination URL
