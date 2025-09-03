@@ -1,0 +1,32 @@
+{
+  "running_shoes": [{
+    "disclosure": "Sponsored",
+    "advertiser": "FleetFeet Local",
+    "title": "Pegasus 41 — Light, Fast, Daily",
+    "body": "Neutral trainer with ReactX foam. Great for 5–10K.",
+    "cta_label": "Shop $99",
+    "cta_url": "https://example.com/pegasus41?utm_source=ai-display&utm_campaign=test1",
+    "image_url": "https://picsum.photos/seed/pegasus/640/360",
+    "safety_tags": ["sponsored_label_required","no_health_claims"]
+  }],
+  "coffee": [{
+    "disclosure": "Sponsored",
+    "advertiser": "BeanLab",
+    "title": "Baratza Encore + Beans Bundle",
+    "body": "Starter grinder + 2×12oz single-origin. Ships today.",
+    "cta_label": "Get the Bundle",
+    "cta_url": "https://example.com/encore-bundle?utm_source=ai-display&utm_campaign=test2",
+    "image_url": "https://picsum.photos/seed/coffee/640/360",
+    "safety_tags": ["sponsored_label_required","no_health_claims"]
+  }],
+  "productivity_saas": [{
+    "disclosure": "Sponsored",
+    "advertiser": "TaskWisp",
+    "title": "Lightweight Project Management",
+    "body": "Kanban + calendar + AI summaries. Free for 3 users.",
+    "cta_label": "Start Free",
+    "cta_url": "https://example.com/taskwisp?utm_source=ai-display&utm_campaign=test3",
+    "image_url": "https://picsum.photos/seed/saas/640/360",
+    "safety_tags": ["sponsored_label_required"]
+  }]
+}

@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: AI Display Fake Ads API
+  version: "1.0.0"
+servers:
+  - url: https://YOUR-VERCEL-DOMAIN.vercel.app
+paths:
+  /api/ad:
+    get:
+      summary: Get a sponsored unit for a query (fake data)
+      parameters:
+        - in: query
+          name: q
+          required: true
+          schema: { type: string }
+          description: The user's query text (no PII)
+        - in: query
+          name: country
+          required: false
+          schema: { type: string, default: "US" }
+        - in: query
+          name: placement
+          required: false
+          schema:
+            type: string
+            enum: [inline_answer, followup_prompt, card, results_list, voice_slate]
+            default: inline_answer
+      responses:
+        "200":
+          description: Decision and optional ad
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  decision:
+                    type: string
+                    enum: [serve, no_fill]
+                  ad:
+                    type: object
+                    nullable: true
+                    properties:
+                      disclosure: { type: string, example: "Sponsored" }
+                      advertiser: { type: string, example: "BeanLab" }
+                      title: { type: string, example: "Baratza Encore + Beans Bundle" }
+                      body: { type: string, example: "Starter grinder + 2×12oz single-origin. Ships today." }
+                      cta_label: { type: string, example: "Get the Bundle" }
+                      cta_url: { type: string, format: uri, example: "https://example.com/encore-bundle" }
+                      image_url: { type: string, format: uri }
+                      safety_tags:
+                        type: array
+                        items: { type: string }
